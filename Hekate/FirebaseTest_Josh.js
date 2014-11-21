@@ -1,6 +1,6 @@
 console.log("hello world");
 var usrId = "User1535";
-var command = "do something more";
+var command = "do something more again!";
 
 var Firebase = require('firebase');
 var Hekate = new Firebase('https://hekate.firebaseio.com');
