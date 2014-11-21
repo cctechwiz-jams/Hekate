@@ -36,21 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirebaseTest_Josh.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FirebaseTest_Josh.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FirebaseTest_Josh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20965058" vertical-offset="0" max-vertical-offset="601">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListeningToFirebaseTest_Josh.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ListeningToFirebaseTest_Josh.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="666">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.56905156" vertical-offset="162" max-vertical-offset="774">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <list>
         <option value="$PROJECT_DIR$/firebaseTest.py" />
         <option value="$PROJECT_DIR$/firebaseTest_Josh.py" />
-        <option value="$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js" />
         <option value="$PROJECT_DIR$/FirebaseTest_Josh.js" />
+        <option value="$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js" />
       </list>
     </option>
   </component>
@@ -338,7 +338,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="520" y="25" width="1400" height="1029" extended-state="0" />
+    <frame x="520" y="25" width="1400" height="1029" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -389,18 +389,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js">
+    <entry file="file://$PROJECT_DIR$/FirebaseTest_Josh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="666">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirebaseTest_Josh.js">
+    <entry file="file://$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20965058" vertical-offset="0" max-vertical-offset="601">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.56905156" vertical-offset="162" max-vertical-offset="774">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
