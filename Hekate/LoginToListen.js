@@ -60,9 +60,25 @@ var updateCommands = function(commandsArray){
     for(var propertyName in commandsArray) {
         if (propertyName == "CMD") {
             console.log("Executing command " + commandsArray[propertyName]);
+            var exec = require('child_process').exec, child;
+            child = exec(commandsArray[propertyName],
+              function (error, stdout) {
+                console.log('exec stdout: \n' + stdout);
+                if (error !== null) {
+                  console.log('exec error: ' + error);
+                }
+            });
         }
         if (propertyName == "Python") {
             console.log("Running Python script " + commandsArray[propertyName]);
+            var exec = require('child_process').exec, child;
+            child = exec("python3.4 " + commandsArray[propertyName],
+              function (error, stdout) {
+                console.log('Python stdout: \n' + stdout);
+                if (error !== null) {
+                  console.log('Python error: ' + error);
+                }
+            });
         }
     }
     console.log("");

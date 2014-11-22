@@ -39,8 +39,18 @@
       <file leaf-file-name="LoginToListen.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LoginToListen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4059406" vertical-offset="657" max-vertical-offset="1566">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5247525" vertical-offset="801" max-vertical-offset="1854">
+              <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helloworld.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helloworld.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -60,6 +70,7 @@
         <option value="$PROJECT_DIR$/firebaseTest_Josh.py" />
         <option value="$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js" />
         <option value="$PROJECT_DIR$/FirebaseTest_Josh.js" />
+        <option value="$PROJECT_DIR$/helloworld.py" />
         <option value="$PROJECT_DIR$/LoginToListen.js" />
       </list>
     </option>
@@ -461,10 +472,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LoginToListen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4059406" vertical-offset="657" max-vertical-offset="1566">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5247525" vertical-offset="801" max-vertical-offset="1854">
+          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
           <folding />
         </state>
       </provider>
