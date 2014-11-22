@@ -9,7 +9,7 @@ var rl1 = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-rl1.question("Enter your UID:(Found in your Android Hekate settings) ", function(answer) {
+rl1.question("Enter your UID (Found in your Android Hekate settings): ", function(answer) {
     UID = answer;
     rl1.close();
     authenticateForFirebase();
@@ -39,6 +39,7 @@ var startListening = function(){
     usrDir.on("value", function (DataSnapshot) {
         console.log("key: ", DataSnapshot.key());
         console.log("val: ", DataSnapshot.val());
+        console.log("roomVal: ", DataSnapshot.child("room").val());
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
