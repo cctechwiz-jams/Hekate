@@ -4,6 +4,8 @@ var Firebase = require('firebase');
 var Hekate = new Firebase('https://hekate.firebaseio.com');
 
 var user = '';
+var dataKey = '';
+var dataProperty = '';
 
 Hekate.on("value", function (DataSnapshot) {
     console.log("key: ", DataSnapshot.key());
@@ -11,27 +13,28 @@ Hekate.on("value", function (DataSnapshot) {
 
     console.log("hasChildren: ", DataSnapshot.hasChildren());
 
-    DataSnapshot.forEach(function (childSnapshot) {
-        user = childSnapshot.key();
-        console.log("childkey:", childSnapshot.key());
-        console.log("Childval:", childSnapshot.val());
+    if(DataSnapshot.hasChildren()) {
+        DataSnapshot.forEach(function (childSnapshot) {
+            user = childSnapshot.key();
 
-        console.log("childhasChildren: ", childSnapshot.hasChildren());
-        childSnapshot.forEach(function (childchildSnapshot) {
-            console.log("childchildkey:", childchildSnapshot.key());
-            console.log("childchildval:", childchildSnapshot.val());
+            if(childSnapshot.hasChildren()) {
+                childSnapshot.forEach(function (childchildSnapshot) {
+                    dataKey = childchildSnapshot.key();
+                    dataProperty = childchildSnapshot.val();
+                });
+            }
+
         });
+    }
 
-    });
-
-    var data = DataSnapshot.exportVal();
-    printChange(data);
-
+    unlock(user, dataKey, dataProperty);
 
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
 
-var printChange = function (data) {
-    console.log("Command to execute: ", data[user]["command"]);
+var unlock = function (u, dk, dp) {
+    console.log("User: ", u)
+    console.log("DataKey: ", dk)
+    console.log("DataProperty: ", dp)
 };
