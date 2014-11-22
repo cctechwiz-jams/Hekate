@@ -1,31 +1,33 @@
 package suucdcc.hekate;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.DialogInterface;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
 
 public class MainActivity extends Activity {
+
+    private String[] user_opts;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+
+    private final Firebase firebase = new Firebase("https://hekate.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +36,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PinFragment())
+                    .add(R.id.drawer_layout, new PinFragment())
                     .commit();
         }
-    }
 
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        menu.add(0,Menu.FIRST, Menu.NONE, firebase.getAuth().getUid());
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -73,10 +79,9 @@ public class MainActivity extends Activity {
 
     public void sendButton(View view){
         EditText pass = (EditText)findViewById(R.id.password);
-        Firebase firebase = new Firebase("https://hekate.firebaseio.com/");
         String value = pass.getText().toString();
         Command c = new Command(value);
-        firebase.child("UserWow").setValue(c);
+        firebase.child(firebase.getAuth().getUid()).setValue(c);
     }
 
     public void sendPass(View view){
@@ -89,7 +94,8 @@ public class MainActivity extends Activity {
                     Firebase firebase = new Firebase("https://hekate.firebaseio.com/");
                     String value = v.getText().toString();
                     Command c = new Command(value);
-                    firebase.child("UserWow").setValue(c);
+                    String uid = firebase.getAuth().getUid();
+                    firebase.child("User/"+uid).setValue(c);
                     handled = true;
                 }
                 return handled;
@@ -97,12 +103,11 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void logout(){
-        /*
-        Firebase ref = new Firebase("https://hekate.firebaseio.com");
-        ref.unauth();
+    public boolean logout(MenuItem item){
+        firebase.unauth();
         Intent intent = new Intent(MainActivity.this,LoginActivity.class);
         startActivity(intent);
-        */
+        finish();
+        return true;
     }
 }

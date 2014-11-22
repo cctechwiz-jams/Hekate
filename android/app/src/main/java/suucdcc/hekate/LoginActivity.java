@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.ContentResolver;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -31,6 +31,8 @@ import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +53,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private Boolean register = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -243,6 +246,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView.setAdapter(adapter);
     }
 
+
+
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
@@ -251,6 +256,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         private final String mEmail;
         private final String mPassword;
+        private final String filename = "hekate.tok";
+        private Firebase ref = new Firebase("https://hekate.firebaseio.com");
+        private Boolean login = false;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -259,25 +267,87 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            Firebase ref = new Firebase("https://hekate.firebaseio.com");
-            ref.authWithPassword(mEmail, mPassword, new Firebase.AuthResultHandler(){
+            FileInputStream file;
+            String tok = "";
+            try{
+                file = openFileInput(filename);
+                int content;
+                while((content = file.read()) != -1){
+                    tok += (char) content;
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+            ref.authWithOAuthToken(tok, "password", new Firebase.AuthResultHandler() {
                 @Override
-                public void onAuthenticated(AuthData authData){
+                public void onAuthenticated(AuthData authData) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                     mAuthTask = null;
                     showProgress(false);
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                    startActivity(intent);
+                    login = true;
                 }
 
                 @Override
-                public void onAuthenticationError(FirebaseError firebaseError){
-                    mAuthTask = null;
-                    showProgress(false);
-                    mPasswordView.setError(getString(R.string.error_incorrect_password));
-                    mPasswordView.requestFocus();
+                public void onAuthenticationError(FirebaseError firebaseError) {
+                    ref.authWithPassword(mEmail, mPassword, new Firebase.AuthResultHandler() {
+                        @Override
+                        public void onAuthenticated(AuthData authData) {
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            FileOutputStream file;
+                            try {
+                                file = openFileOutput(filename, Context.MODE_PRIVATE);
+                                file.write(authData.getToken().getBytes());
+                                file.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            startActivity(intent);
+                            finish();
+                            mAuthTask = null;
+                            showProgress(false);
+                            login = true;
+                        }
+
+                        @Override
+                        public void onAuthenticationError(FirebaseError firebaseError) {
+                            mAuthTask = null;
+                            showProgress(false);
+                            if (!register) {
+                                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                                mPasswordView.requestFocus();
+                            }
+                            login = false;
+                        }
+                    });
+
+                    ref.createUser(mEmail, mPassword, new Firebase.ResultHandler() {
+                        @Override
+                        public void onSuccess() {
+                            Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+                            mAuthTask = null;
+                            showProgress(false);
+                            mEmailView.setText(mEmail);
+                            mPasswordView.setText("");
+                            mPasswordView.setError(getString(R.string.user_created));
+                            mPasswordView.requestFocus();
+                            login = false;
+                        }
+
+                        @Override
+                        public void onError(FirebaseError firebaseError) {
+                            mAuthTask = null;
+                            showProgress(false);
+                            System.out.println(firebaseError);
+                            register = false;
+                            login = false;
+                        }
+                    });
                 }
             });
-            return false;
+            return login;
         }
 
         @Override
