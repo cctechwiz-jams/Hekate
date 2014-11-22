@@ -340,7 +340,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         public void onError(FirebaseError firebaseError) {
                             mAuthTask = null;
                             showProgress(false);
-                            System.out.println(firebaseError);
                             register = false;
                             login = false;
                         }
