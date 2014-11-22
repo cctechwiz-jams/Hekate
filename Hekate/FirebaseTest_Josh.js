@@ -3,7 +3,7 @@ console.log("Making changes in Firebase...");
 var Firebase = require('firebase');
 var Hekate = new Firebase('https://hekate.firebaseio.com');
 
-var UID = 'simplelogin:20';
+var UID = 'simplelogin:4';
 var Path = "User/"+UID+"/";
 var URI = "";
 
@@ -27,8 +27,11 @@ authenticateForFirebase();
 
 var makeChanges = function(){
 
-//    URI = Hekate.child(Path+"Rooms");
-//    URI.set([{Kitchen: "locked"},{LivingRoom: "unlocked"},{Garage: "locked"}]);
+    URI = Hekate.child(Path+"Rooms");
+    URI.update({Kitchen: "unlocked"});
+    URI.update({Garage: "locked"});
+    URI.update({BedRoom: "locked"});
+//    URI.set([{LivingRoom: "unlocked"},{Garage: "locked"}, {BedRoom: "locked"}]);
 
 //    URI = Hekate.child(Path+"Pin");
 //    URI.set(1234);
@@ -36,7 +39,10 @@ var makeChanges = function(){
 //    URI = Hekate.child(Path);
 //    URI.update({Pin: 9874});
 
-//    URI = Hekate.child(Path+"Commands");
+    URI = Hekate.child(Path+"Commands");
+    URI.update({CMD: 'ping 8.8.8.8'});
+    URI.update({Python: 'blinkLED.py'});
+    URI.update({CMD: 'ifconfig'});
 //    URI.set([{CMD: "ping 8.8.8.8"},{Python: "blinkLED.py"},{CMD: "ifconfig"}]);
 
 //    URI = Hekate.child(Path+"Commands");

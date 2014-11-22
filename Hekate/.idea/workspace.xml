@@ -26,41 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="firebaseTest_Josh.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/firebaseTest_Josh.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FirebaseTest_Josh.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FirebaseTest_Josh.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FirebaseTest_Josh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6039604" vertical-offset="45" max-vertical-offset="954">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="1062">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListeningToFirebaseTest_Josh.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginToListen.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LoginToListen.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LoginToListen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-              <caret line="41" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.4059406" vertical-offset="657" max-vertical-offset="1566">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,8 +59,8 @@
         <option value="$PROJECT_DIR$/firebaseTest.py" />
         <option value="$PROJECT_DIR$/firebaseTest_Josh.py" />
         <option value="$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js" />
-        <option value="$PROJECT_DIR$/LoginToListen.js" />
         <option value="$PROJECT_DIR$/FirebaseTest_Josh.js" />
+        <option value="$PROJECT_DIR$/LoginToListen.js" />
       </list>
     </option>
   </component>
@@ -451,7 +431,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ListeningToFirebaseTest_Josh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
+        <state vertical-scroll-proportion="0.41584158" vertical-offset="0" max-vertical-offset="909">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
           <folding />
         </state>
@@ -459,24 +439,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/firebaseTest_Josh.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state vertical-scroll-proportion="0.0990099" vertical-offset="0" max-vertical-offset="909">
           <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoginToListen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <caret line="41" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FirebaseTest_Josh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6039604" vertical-offset="45" max-vertical-offset="954">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="1062">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="16707" max-vertical-offset="68688">
+          <caret line="945" column="0" selection-start-line="945" selection-start-column="0" selection-end-line="946" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginToListen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4059406" vertical-offset="657" max-vertical-offset="1566">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
