@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="primary" type="color"> #D50000 </item>
+    <item name="accent" type="color"> #FFEBEE </item>
+    <item name="title" type="color"> #FFFFFF </item>
+    <item name="primaryDim" type="color"> #F44336 </item>
+    <item name="font_color" type="color"> #000000 </item>
+    <item name="white" type="color"> #FFFFFF</item>
+</resources>
