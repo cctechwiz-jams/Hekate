@@ -71,7 +71,7 @@ var updateCommands = function(commandsArray){
         }
         if (propertyName == "Python") {
             console.log("Running Python script " + commandsArray[propertyName]);
-            executePython(commandArray[propertyName]);
+            executePython(commandsArray[propertyName]);
         }
     }
     console.log("");
@@ -82,15 +82,15 @@ var updateRooms = function(RoomsArray){
     for(var propertyName in RoomsArray){
         if(RoomsArray[propertyName] == "unlocked"){
             console.log("unlocking the " + propertyName + " door.");
-            if(propertyName == 'Kitchen'){
-                executePython('open.py');
-            }
+//            if(propertyName == 'Kitchen'){
+//                executePython('doorOpened.py');
+//            }
         }
         if(RoomsArray[propertyName] == "locked"){
             console.log("locking the " + propertyName + " door.");
-            if(propertyName == 'Kitchen'){
-                executePython('closed.py');
-            }
+//            if(propertyName == 'Kitchen'){
+//                executePython('doorClosed.py');
+//            }
         }
     }
     console.log("");
