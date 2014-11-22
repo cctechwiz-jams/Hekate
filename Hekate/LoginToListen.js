@@ -71,14 +71,7 @@ var updateCommands = function(commandsArray){
         }
         if (propertyName == "Python") {
             console.log("Running Python script " + commandsArray[propertyName]);
-            var exec = require('child_process').exec, child;
-            child = exec("python3.4 " + commandsArray[propertyName],
-              function (error, stdout) {
-                console.log('Python stdout: \n' + stdout);
-                if (error !== null) {
-                  console.log('Python error: ' + error);
-                }
-            });
+            executePython(commandArray[propertyName]);
         }
     }
     console.log("");
@@ -89,10 +82,27 @@ var updateRooms = function(RoomsArray){
     for(var propertyName in RoomsArray){
         if(RoomsArray[propertyName] == "unlocked"){
             console.log("unlocking the " + propertyName + " door.");
+            if(propertyName == 'Kitchen'){
+                executePython('open.py');
+            }
         }
         if(RoomsArray[propertyName] == "locked"){
             console.log("locking the " + propertyName + " door.");
+            if(propertyName == 'Kitchen'){
+                executePython('closed.py');
+            }
         }
     }
     console.log("");
+};
+
+var executePython = function(filename){
+    var exec = require('child_process').exec, child;
+    child = exec("python3.4 " + filename,
+    function (error, stdout) {
+        console.log('Python stdout: \n' + stdout);
+        if (error !== null) {
+            console.log('Python error: ' + error);
+        }
+    });
 };
