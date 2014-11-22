@@ -34,30 +34,11 @@ var authenticateForFirebase = function() {
 };
 
 var startListening = function(){
-    var user = '';
-    var dataKey = '';
-    var dataProperty = '';
+    var usrDir = Hekate.child("User/"+UID);
 
-    Hekate.child("User/"+UID).on("value", function (DataSnapshot) {
+    usrDir.on("value", function (DataSnapshot) {
         console.log("key: ", DataSnapshot.key());
         console.log("val: ", DataSnapshot.val());
-
-        console.log("hasChildren: ", DataSnapshot.hasChildren());
-
-        if(DataSnapshot.hasChildren()) {
-            DataSnapshot.forEach(function (childSnapshot) {
-                user = childSnapshot.key();
-
-                if(childSnapshot.hasChildren()) {
-                    childSnapshot.forEach(function (childchildSnapshot) {
-                        dataKey = childchildSnapshot.key();
-                        dataProperty = childchildSnapshot.val();
-                    });
-                }
-
-            });
-        }
-
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
