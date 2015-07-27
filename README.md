@@ -16,6 +16,8 @@ $ npm install
 ```
 Then see if it works:
 ```sh
+$ node -v
+$ npm -v
 $ node example.js
 ```
 
