@@ -1,0 +1,34 @@
+{
+  "name": "hekate",
+  "version": "0.0.1",
+  "description": "DIY home automation",
+  "main": "main.js",
+  "dependencies": {
+    "firebase": "^2.2.7",
+    "firebase-token-generator": "^2.0.0",
+    "gpio-stream": "^1.0.16",
+    "onoff": "^1.0.2",
+    "readline": "0.0.8",
+    "rpi-gpio": "^0.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaz2x4/Hekate.git"
+  },
+  "keywords": [
+    "home",
+    "automation",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Brance Boren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaz2x4/Hekate/issues"
+  },
+  "homepage": "https://github.com/chaz2x4/Hekate#readme"
+}
